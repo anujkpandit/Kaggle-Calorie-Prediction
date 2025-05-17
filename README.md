@@ -1,63 +1,80 @@
-# 🏋️‍♂️ Calorie Prediction Using Machine Learning (Kaggle May 2025)
+# 🏋️‍♂️ Calorie Burn Prediction – Kaggle Playground Series S5E5
 
-This project predicts how many calories a person burns during a workout using various physiological features.
+This is my submission for the **Kaggle Playground Series - Season 5, Episode 5** competition, where the goal is to **predict the number of calories burned** during a workout session based on physiological and workout metrics.
 
-🧠 Built as part of [Kaggle Playground Series - Season 5 Episode 5](https://www.kaggle.com/competitions/playground-series-s5e5), May 2025.
-
----
-
-## 📊 Dataset
-
-- The dataset is synthetic but realistic.
-- Train data includes: `Age`, `Height`, `Weight`, `Duration`, `Heart_Rate`, `Body_Temp`, `Sex`
-- Goal: Predict the continuous target `Calories`
+> 🔗 [View Kaggle Competition](https://www.kaggle.com/competitions/playground-series-s5e5)
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Problem Statement
 
-- Python
-- Pandas & NumPy
-- Scikit-learn
-- Random Forest Regressor
-- RMSLE (Root Mean Squared Log Error) as evaluation metric
+Given data on:
+- Age
+- Height
+- Weight
+- Duration of exercise
+- Heart rate
+- Body temperature
+- Gender (categorical)
 
----
-
-## 🚀 Final RMSLE Score
-
-**0.0634** (local validation)  
-Model trained on full dataset for final submission.
+...the task is to predict the number of calories burned (`Calories`) using regression models.
 
 ---
 
-## 📁 Folder Structure
+## 🧠 ML Approach
 
-├── kaggle-calorie-model.ipynb # Main notebook
-├── submission.csv # Example submission file
-
-
----
-
-## 📌 How to Run
-
-```bash
-pip install -r requirements.txt
-
-Then open the notebook and run all cells.
+- **EDA**: Basic exploration using `.describe()` and visual inspection
+- **Preprocessing**:
+  - Encoded categorical variable `Gender`
+  - No missing values
+  - Skipped feature scaling as tree-based models were used
+- **Model Used**: `RandomForestRegressor`
+- **Evaluation Metric**: `RMSLE` (Root Mean Squared Logarithmic Error)
 
 ---
 
-## 📈 Future Improvements
-Try XGBoost / LightGBM
+## 📊 RMSLE Score
 
-Feature scaling
-
-Hyperparameter tuning
+**Validation RMSLE**: `0.0634`
 
 ---
 
-👤 Author
-Anuj
-B.Tech 3rd Year | Aspiring ML Engineer
-LinkedIn | Kaggle | GitHub
+## 📁 Files in This Repo
+
+| File | Description |
+|------|-------------|
+| `kaggle_calorie_model.ipynb` | Main Jupyter notebook with training, prediction, and submission code |
+| `submission.csv` | Final predictions for submission |
+| `requirements.txt` | Python libraries used |
+| *(Note: train/test CSVs removed due to size, download them from Kaggle)* |
+
+---
+
+## 📥 How to Use
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/anujkpandit/Kaggle-Calorie-Prediction.git
+   cd Kaggle-Calorie-Prediction
+2. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+3. Download the dataset from Kaggle Competition Page
+
+4. Run the notebook:
+  ```bash
+  jupyter notebook kaggle_calorie_model.ipynb
+
+##🔧 Tech Stack
+Python
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+Jupyter Notebook
+
+📄 License
+This project is under the MIT License – feel free to use, fork, or modify.
